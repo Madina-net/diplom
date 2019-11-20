@@ -1,3 +1,5 @@
+@media (max-width: 640px) {
+
 /***********************************************
         Общие стили для всей страницы
 ************************************************/
@@ -10,13 +12,13 @@
 }
 
 body {
-    max-width: 320px;
     font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-    max-width: 280px;
-    margin: 0 auto;
+    /* max-width: 280px; */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /***********************************************
@@ -59,16 +61,18 @@ body {
 
 /* Шапка сайта - Логотип */
 .home-header__logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 33px;
-    margin-bottom: 136px;
+    margin: 33px 0px 136px 0px;
+    text-align: center;
 }
 
+.home-header__logo__link img {
+    width: 133px;
+    height: auto;
+}
 
 /* Шапка сайта - Текст в заголовке */
 .home-header__text {
-    margin-bottom: 90px;
+    margin: 0px auto 90px auto;
 }
 
 .home-header__text h4 {
@@ -90,6 +94,7 @@ body {
 
 /* Блок с кнопками */
 .app-buttons {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 84px;
@@ -111,7 +116,7 @@ body {
 }
 
 .app-buttons__link__icon {
-    width: 40%;
+    width: 45%;
     text-align: right;
 }
 
@@ -121,7 +126,7 @@ body {
 }
 
 .app-buttons__link__text {
-    width: 60%;
+    width: 55%;
 }
 
 .app-buttons__link__text p {
@@ -147,6 +152,11 @@ body {
 /***********************************************
         Блок с атлетами
 ************************************************/
+
+/* Общие стили для блока с атлетами */
+.athlets{
+    overflow: hidden; 
+}
 
 /* Атлеты - Заголовок */
 .athlets__title {
@@ -385,3 +395,4 @@ body {
 /***********************************************
         Конец - Футтер
 ************************************************/
+}

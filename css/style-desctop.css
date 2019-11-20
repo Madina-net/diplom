@@ -1,16 +1,25 @@
-@media (min-width: 769px) {
+@media (min-width: 961px) {
 
     /***********************************************
         Общие стили для всей страницы
     ************************************************/
 
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
     body {
         max-width: 1920px;
         margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
+        box-shadow: 0px 0px 15px gray;
     }
 
     .container {
-        max-width: 1600px;
+        max-width: 1558px;
         padding: 0 15px;
         margin: 0 auto;
     }
@@ -26,14 +35,41 @@
         Шапка сайта
     ************************************************/
 
+    /* Шапка сайта - Общие стили */
+    .home-header {
+        background-image: url(../img/football_767.jpg);
+        background-color: #1a183c;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 1px solid transparent;
+        position: relative;
+        z-index: 1;
+        color: white;
+    }
+
+    .home-header::after {
+        content: "";
+        background-color: #1a183c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
     /* Шапка - Логотип */
     .home-header__logo {
+        text-align: center;
         margin-top: 45px;
         margin-bottom: 295px;
     }
 
     .home-header__logo__link img {
         width: 191px;
+        height: 52px;
     }
 
     /* Шапка - Текст в заголовке */
@@ -42,10 +78,12 @@
     }
 
     .home-header__text h4 {
+        color: #ffffff;
+        font-weight: 700;
+        text-transform: uppercase;
         font-size: 90px;
         letter-spacing: 4.96px;
         line-height: 80px;
-
     }
 
     .home-header__text--first {
@@ -60,11 +98,23 @@
 
     /* Блок с кнопками */
     .app-buttons {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
         margin-bottom: 110px;
     }
 
     .app-buttons__link {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #5e42b0;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 45%;
         max-width: 311px;
         margin-left: 25px;
         margin-right: 25px;
@@ -73,16 +123,34 @@
         border-radius: 50px;
     }
 
+    .app-buttons__link__icon {
+        width: 40%;
+        text-align: right;
+    }
+
+
     .app-buttons__link__icon i {
         font-size: 38px;
         padding-right: 28px;
     }
 
+    .app-buttons__link__text {
+        width: 60%;
+    }
+
     .app-buttons__link__text p {
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
         font-size: 14px;
         font-weight: 300;
         line-height: 18px;
     }
+
+    .app-buttons__link__text--bold {
+        font-weight: 700;
+    }
+
 
     /***********************************************
         Конец - Шапка сайта
@@ -95,10 +163,20 @@
         Блок с атлетами
     ************************************************/
 
+    /* Общие стили для блока с атлетами */
+    .athlets {
+        position: relative;
+        overflow: hidden;
+    }
+
     /* Атлеты - Заголовок */
     .athlets__title {
+        color: #e7e7e7;
+        font-weight: 700;
+        text-transform: uppercase;
         font-size: 80px;
         margin: 95px 0px 25px 0px;
+        padding-left: 35px;
     }
 
     /* Атлеты - Изображения */
@@ -113,6 +191,31 @@
         padding: 45px 0px 45px 0px;
     }
 
+    .athlets__info--light-white {
+        background-color: #fafafa;
+    }
+
+    .athlets__info--dark-gray {
+        background-color: #f5f4f9;
+    }
+
+    .athlets__info--light-violet {
+        background-color: #5e42b0;
+    }
+
+    .athlets__info--light-violet p,
+    .athlets__info--dark-violet p {
+        color: #ffffff;
+    }
+
+    .athlets__info--light-violet .athlets__info__title__number {
+        border-bottom: 4px solid #ffffff;
+    }
+
+    .athlets__info--dark-violet {
+        background-color: #090c35;
+    }
+
     /* Атлеты - Заголовок текста */
     .athlets__info__title {
         display: flex;
@@ -124,7 +227,7 @@
 
         font-weight: 700;
         text-transform: uppercase;
-        padding-left: 5px;
+        padding-left: 35px;
     }
 
     /* Атлеты - Нумерация */
@@ -135,15 +238,22 @@
         margin-right: 10px;
     }
 
+    .athlets__info--dark-violet .athlets__info__title__number {
+        border-bottom: 4px solid #ffffff;
+        color: #5e42b0;
+    }
+
     /* Атлеты - Текст */
     .athlets__info__text {
+        color: #000000;
         font-size: 20px;
         letter-spacing: 1.4px;
         line-height: 28px;
         font-weight: 400;
+        padding-left: 35px;
     }
 
-    /* Атлеты - Изображения -- Футболист */
+    /* ??? Атлеты - Изображения -- Футболист */
     .athlets__img--football {
         margin-top: -20px;
         margin-bottom: -50px;
@@ -154,8 +264,8 @@
         position: absolute;
         height: 908px;
         width: auto;
-        margin-left: 347px;
-        margin-top: -191px;
+        right: 50%;
+        top: 50px;
     }
 
     .athlets--football .athlets__title,
@@ -171,8 +281,8 @@
         position: absolute;
         height: 815px;
         width: auto;
-        right: 149px;
-        margin-top: -206px;
+        left: 40%;
+        top: 20px;
     }
 
     .athlets--basketball .athlets__title,
@@ -219,6 +329,16 @@
         left: 886px;
     }
 
+    .people--left .people__number {
+        top: 32%;
+        right: -8%;
+    }
+
+    .people--right .people__number {
+        top: 32%;
+        left: -8%;
+    }
+
     .people__number span {
         color: #fff;
         font-size: 19px;
@@ -238,53 +358,57 @@
         letter-spacing: 1.4px;
         margin-top: 250px;
         margin-left: 125px;
-        
+        margin-bottom: 75px;
+
     }
 
     /* Люди - Текст */
     .people__text {
+        color: #000000;
         font-size: 24px;
         line-height: 28px;
         letter-spacing: 1.4px;
         font-weight: 400;
         margin-left: 130px;
+        max-width: 665px;
     }
 
     /* Люди - Блок с текстом */
-     .people__desc{
+    .people__desc {
         width: 50%;
-    } 
+    }
 
     /* Люди - Левая часть */
-    .people--left{
+    .people--left {
         display: flex;
         flex-wrap: nowrap;
     }
-    .people--left .people__img{
-        width: 50%;
-    } 
 
-    .people--left .people__img img{
+    .people--left .people__img {
+        width: 50%;
+    }
+
+    .people--left .people__img img {
         max-width: 960px;
         max-height: 730px;
     }
 
     /* Люди - Правая часть */
-    .people--right{
+    .people--right {
         display: flex;
         flex-wrap: nowrap;
     }
 
-    .people--right .people__img{
+    .people--right .people__img {
         width: 50%;
-    } 
+    }
 
-    .people--right .people__img img{
+    .people--right .people__img img {
         max-width: 960px;
         max-height: 730px;
     }
 
-    .people--right .people__desc{
+    .people--right .people__desc {
         order: -1;
     }
 
@@ -299,8 +423,34 @@
         Футтер
     ************************************************/
 
+    /* Футтер - Основные стили */
+    .main-footer {
+        background-image: url(../img/game_767.jpg);
+        background-color: #1a183c;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 1px solid transparent;
+        position: relative;
+        z-index: 1;
+        color: white;
+    }
+
+    .main-footer::after {
+        content: "";
+        background-color: #1a183c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+
     /* Футтер - Блок с иконкой и текстом */
-    .footer__block{
+    .footer__block {
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
@@ -328,6 +478,8 @@
     }
 
     .footer__text h4 {
+        color: #ffffff;
+        font-weight: 700;
         font-size: 80px;
         line-height: 60px;
         text-transform: uppercase;
@@ -337,6 +489,8 @@
     }
 
     .footer__text p {
+        color: #9b8ec1;
+        text-transform: uppercase;
         font-size: 30px;
         font-weight: 400;
         line-height: 60px;
@@ -345,16 +499,18 @@
     }
 
     /* Футтер - Кнопки */
-    .main-footer .app-buttons{
+    .main-footer .app-buttons {
         margin-bottom: 260px;
     }
 
     /* Футтер - Логотип */
     .footer__logo {
+        display: flex;
+        justify-content: center;
         margin-bottom: 50px;
     }
 
-    .footer__logo img{
+    .footer__logo img {
         width: 191px;
         height: auto;
     }
